@@ -1,0 +1,25 @@
+<package>
+  <description brief="ar_object_tracker">
+
+     ar_object_tracker merges multiple AR Tags to produce the tf frame for
+     the object to which they are attached.
+
+  </description>
+  <author>Max Pflueger</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/ar_object_tracker</url>
+
+  <depend package="ar_pose"/>
+  <depend package="geometry_msgs"/>
+  <depend package="tf"/>
+  <depend package="tf2"/>
+  <depend package="visualization_msgs"/>
+
+  <depend package="common_rosdeps"/>
+  <rosdep name="eigen"/>
+  <rosdep name="yaml-cpp"/>
+
+</package>
+
+

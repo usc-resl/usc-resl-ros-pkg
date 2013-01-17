@@ -1,0 +1,47 @@
+<launch>
+  <arg name="debug" default="false"/>
+  <arg if="$(arg debug)" name="launch_prefix"
+       value="xterm -rv -e gdb -ex run -args"/>
+  <arg unless="$(arg debug)" name="launch_prefix" value=""/>
+
+  <node name="rviz" pkg="rviz" type="rviz"
+        args="-d $(find ar_object_tracker)/config/calibrate.vcg" />
+
+  <node name="world_to_cam" pkg="tf" type="static_transform_publisher"
+        args="0 0 1 0 0 0 world camera_link 100" />
+
+  <include file="$(find openni_launch)/launch/openni.launch" />
+
+  <node name="ar_multi" pkg="ar_pose" type="ar_multi"
+        respawn="false" output="screen" launch-prefix="$(arg launch_prefix)">
+    <remap from="ar_pose_marker" to="/ar_pose_marker_all" />
+    <remap from="/usb_cam/image_raw" to="/camera/rgb/image_rect_color" />
+    <remap from="/usb_cam/camera_info" to="/camera/rgb/camera_info" />
+    <param name="marker_frame" type="string" value="ARMarker"/>
+
+    <param name="marker_pattern_list" type="string"
+           value="$(find ar_object_tracker)/config/object_tag_list.dat" />
+    <param name="threshold" type="int" value="100"/>
+    <param name="publish_tf" type="bool" value="true"/>
+    <param name="publish_visual_markers" type="bool" value="true"/>
+  </node>
+
+  <!--
+  <arg name="object_config"
+       default="$(find ar_object_tracker)/config/object_calibrated_ex.yaml" />
+  -->
+  <arg name="object_calibration_conf"
+       default="/home/max/.ros/ar_object_tracker/config/object_default.yaml" />
+  <arg name="object_offset_conf"
+       default="$(find ar_object_tracker)/config/object_tag_offset.yaml" />
+
+  <node name="ar_object_tracker" pkg="ar_object_tracker" type="object_tracker">
+    <param name="test_mode" type="bool" value="false"/>
+    <param name="object_calibration_conf" type="string"
+           value="$(arg object_calibration_conf)" />
+    <param name="object_offset_conf" type="string"
+           value="$(arg object_offset_conf)" />
+    <remap from="/ar_pose_marker" to="/ar_pose_marker_all" />
+  </node>
+</launch>
+

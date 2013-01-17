@@ -1,0 +1,5 @@
+object_frame: back_observed
+tagId: 0 # unused
+pose:
+  origin: [-0.1125, -0.062, 0.051]
+  orientation: [-0.04689, 0.638683, 0.764597, -0.0726403]

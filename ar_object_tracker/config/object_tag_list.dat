@@ -1,0 +1,50 @@
+#number of patterns
+8
+
+#pattern 1
+4x4_1
+data/4x4/4x4_1.patt
+112.0
+0.0 0.0
+
+#pattern 11
+4x4_11
+data/4x4/4x4_11.patt
+131.0
+0.0 0.0
+
+#pattern 17
+4x4_17
+data/4x4/4x4_17.patt
+76.0
+0.0 0.0
+
+#pattern 14
+4x4_14
+data/4x4/4x4_14.patt
+76.0
+0.0 0.0
+
+#pattern 12
+4x4_12
+data/4x4/4x4_12.patt
+76.0
+0.0 0.0
+
+#pattern 18
+4x4_18
+data/4x4/4x4_18.patt
+74.0
+0.0 0.0
+
+#pattern 15
+4x4_15
+data/4x4/4x4_15.patt
+77.0
+0.0 0.0
+
+#pattern 16
+4x4_16
+data/4x4/4x4_16.patt
+76.0
+0.0 0.0

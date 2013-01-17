@@ -1,0 +1,16 @@
+---
+objectId: 1
+tagCount: 2
+tags:
+  # Sequence of all tags on the object with position from reference
+  -
+    tagId: 0
+    pose:
+      origin: [0, 0, 0]
+      orientation: [0, 0, 0, 1]
+  -
+    tagId: 1
+    pose:
+      origin: [0.15, 0.15, 0]
+      orientation: [0, 0, 0, 1]
+...

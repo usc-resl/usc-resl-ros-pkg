@@ -1,0 +1,32 @@
+/**
+\mainpage
+\htmlinclude manifest.html
+
+\b ar_object_tracker is a set of tools for tracking rigid objects using
+attached AR Tags.  There are two main tools.  The first is calibration, which
+is used to determine the relative poses of all the tags on the object.  The
+second is tracking, which uses all visible tags on an object to give a best
+estimate of the pose of that object.  The process is still pretty rough, but
+hopefully reading the included launch and config files should illustrate how
+it works.
+
+<!-- 
+Provide an overview of your package.
+-->
+
+
+\section codeapi Code API
+
+<!--
+Provide links to specific auto-generated API documentation within your
+package that is of particular interest to a reader. Doxygen will
+document pretty much every part of your code, so do your best here to
+point the reader to the actual API.
+
+If your codebase is fairly large or has different sets of APIs, you
+should use the doxygen 'group' tag to keep these APIs together. For
+example, the roscpp documentation has 'libros' group.
+-->
+
+
+*/
